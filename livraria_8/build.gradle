@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'br.com.fiap'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	//Swagger
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+	//dependência do JPA do proprio spring - tem na documentação
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//drive do banco de dados
+	implementation 'com.h2database:h2:1.4.197'
+
+	//versionamento banco de dados
+	implementation 'org.flywaydb:flyway-maven-plugin:4.0.3'
+	implementation 'com.github.sebhoss.contract:contract-verifier:1.0.0'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
